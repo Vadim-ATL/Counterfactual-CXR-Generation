@@ -74,14 +74,6 @@ Features in the GUI:
 
 If you use this code or model in your research, please cite our work:
 
-```bibtex
-@article{yourName2024counterfactual,
-  title={Counterfactual Chest X-Ray Generation via Disentangled Anatomy and Diffusion Transformers},
-  author={Your Name and Collaborators},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
-}
-```
 
 ## Acknowledgments
 * Segmentations derived using TorchXRayVision.

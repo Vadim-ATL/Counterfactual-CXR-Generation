@@ -6,6 +6,12 @@ This repository provides the official PyTorch implementation for generating coun
 
 ## Overview
 
+### Disease Regression Timeline (Sick to Healthy)
+![Disease Regression](docs/Regression.gif)
+
+### Disease Progression Timeline (Healthy to Sick)
+![Disease Progression](docs/Progression.gif)
+
 Generative modeling in medical imaging often struggles with identity preservation during image translation. This repository solves this by pairing a domain-specific Anatomy Encoder with a Scalable Interpolation Transformer (SiT). 
 
 Our pipeline enables:

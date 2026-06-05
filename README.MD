@@ -4,12 +4,13 @@ This repository provides the official PyTorch implementation for generating coun
 
 ## Overview
 
-<table>
-  <tr>
-    <td><img src="docs/Regression.gif" alt="Disease Regression" width="400"/><br/><b>Disease Regression</b> (Sick → Healthy)</td>
-    <td><img src="docs/Progression.gif" alt="Disease Progression" width="400"/><br/><b>Disease Progression</b> (Healthy → Sick)</td>
-  </tr>
-</table>
+<div align="center">
+  <img src="docs/Regression.gif" alt="Disease Regression" width="400"/>
+  <img src="docs/Progression.gif" alt="Disease Progression" width="400"/>
+</div>
+<div align="center">
+  <b>Disease Regression</b> (Sick → Healthy) &nbsp;&nbsp;&nbsp; <b>Disease Progression</b> (Healthy → Sick)
+</div>
 
 Generative modeling in medical imaging often struggles with identity preservation during image translation. This repository solves this by pairing Anatomy Encoder with [Scalable Interpolation Transformer (SiT)](https://github.com/willisma/sit). 
 

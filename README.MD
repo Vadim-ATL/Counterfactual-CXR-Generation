@@ -5,8 +5,8 @@ This repository provides the official PyTorch implementation for generating coun
 ## Overview
 
 <div align="center">
-  <img src="docs/Regression.gif" alt="Disease Regression" width="400"/>
-  <img src="docs/Progression.gif" alt="Disease Progression" width="400"/>
+  <img src="docs/Regression.gif" alt="Disease Regression" width="200"/>
+  <img src="docs/Progression.gif" alt="Disease Progression" width="200"/>
 </div>
 <div align="center">
   <b>Disease Regression</b> (Sick → Healthy) &nbsp;&nbsp;&nbsp; <b>Disease Progression</b> (Healthy → Sick)

@@ -1,8 +1,6 @@
 # Counterfactual Chest X-Ray Generation via Disentangled Anatomy and Diffusion Transformers (SiT)
 
-[License: MIT](https://opensource.org/licenses/MIT) | [Python 3.10+](https://www.python.org/downloads/) | [PyTorch](https://pytorch.org/)
-
-This repository provides the official PyTorch implementation for generating counterfactual disease trajectories (progression and regression) in Chest X-rays. By explicitly disentangling stable anatomical structures from transient pathological features, this framework allows for the continuous manipulation of disease severity (e.g., Cardiomegaly, Pneumonia) while strictly preserving patient identity.
+This repository provides the official PyTorch implementation for generating counterfactual disease trajectories (progression and regression) in Chest X-rays. By explicitly disentangling stable anatomical structures from transient pathological features using anatomy encoder with Swin-T backbone, my framework simulates realistic continuous manipulation of pulmonary and cardiovascular pathologies and preserving patient anatomy.
 
 ## Overview
 
@@ -12,26 +10,26 @@ This repository provides the official PyTorch implementation for generating coun
 ### Disease Progression Timeline (Healthy to Sick)
 ![Disease Progression](docs/Progression.gif)
 
-Generative modeling in medical imaging often struggles with identity preservation during image translation. This repository solves this by pairing a domain-specific Anatomy Encoder with a Scalable Interpolation Transformer (SiT). 
+Generative modeling in medical imaging often struggles with identity preservation during image translation. This repository solves this by pairing Anatomy Encoder with [Scalable Interpolation Transformer (SiT)](https://github.com/willisma/sit). 
 
-Our pipeline enables:
-* Continuous Severity Dials: Interpolate disease severity smoothly from 0.0 (Healthy) to 1.0 (Severe Pathology).
-* Counterfactual Regression/Progression: Simulate how a specific patient's X-ray would look if their condition worsened or improved.
-* Identity Preservation: Zero-shot retention of unique patient rib cages, lung shapes, and clavicles using orthogonal spatial latents.
+The model provides:
+* Continuous severity dials: Interpolate disease severity smoothly from 0.0 (Healthy) to 1.0 (Severe Pathology).
+* Counterfactual Regression/Progression of pathology: Simulatation of specific patient's condition would look if their state worsened or improved.
+* Preservation of patient's identity: Retention of unique patient rib cages, lung shape and volume, and clavicles using orthogonal spatial latents.
 
 ## Methodology
 
 1. Disentangled Anatomy Encoder:
-We utilize a custom segmentation head (supervised via TorchXRayVision pseudo-masks) and an adversarial pathology probe to force the encoder to learn only structural anatomy. The resulting latent vector is orthogonal to disease presence.
+I designed a custom segmentation head and an adversarial pathology probe to force the encoder to learn only structural anatomy. The resulting latent vector is orthogonal to disease presence.
 
 2. SiT Diffusion Wrapper:
-A Diffusion Transformer (SiT-XL/2) is trained to denoise X-ray latents, conditioned jointly on the disentangled anatomy tokens and a continuous scalar condition representing disease severity.
+A Diffusion Transformer [(SiT-XL/2)](https://github.com/willisma/sit) was first fine-tuned and trained to denoise X-ray latents, conditioned jointly on the disentangled anatomy tokens and a continuous scalar condition representing disease severity.
 
 ## Installation
 
 ```bash
-git clone [https://github.com/yourusername/counterfactual-cxr-sit.git](https://github.com/yourusername/counterfactual-cxr-sit.git)
-cd counterfactual-cxr-sit
+git clone [https://github.com/Vadim-ATL/Counterfactual-CXR-Generation.git](https://github.com/Vadim-ATL/Counterfactual-CXR-Generation.git)
+cd Counterfactual-CXR-Generation
 
 # Create and activate environment
 conda create -n counterfactual python=3.9
@@ -65,7 +63,7 @@ python train_diffusion.py --manifest path/to/manifest.csv --anatomy_ckpt checkpo
 
 ## Inference and GUI
 
-We provide a local GUI (Tkinter) to visualize disease timelines interactively.
+I provide a local GUI (Tkinter) to visualize disease timelines interactively.
 
 ```bash
 python app.py
@@ -83,4 +81,4 @@ If you use this code or model in your research, please cite our work:
 
 ## Acknowledgments
 * Segmentations derived using TorchXRayVision.
-* Core diffusion architectures adapted from SiT and Stable Diffusion.
+* Core diffusion architectures adapted from [Scalable Interpolation Transformers (SiT)](https://github.com/willisma/sit).

@@ -4,15 +4,26 @@ This repository provides the official PyTorch implementation for generating coun
 
 ## Overview
 
-<div align="center">
-  <img src="docs/Regression.gif" alt="Disease Regression" width="200"/>
-  <img src="docs/Progression.gif" alt="Disease Progression" width="200"/>
-</div>
-<div align="center">
-  <b>Disease Regression</b> (Sick → Healthy) &nbsp;&nbsp;&nbsp; <b>Disease Progression</b> (Healthy → Sick)
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/Regression.gif" alt="Disease Regression" width="100%">
+      <br>
+      <b>Disease Regression</b>
+      <br>
+      <sub>Sick → Healthy</sub>
+    </td>
+    <td align="center">
+      <img src="docs/Progression.gif" alt="Disease Progression" width="100%">
+      <br>
+      <b>Disease Progression</b>
+      <br>
+      <sub>Healthy → Sick</sub>
+    </td>
+  </tr>
+</table>
 
-Generative modeling in medical imaging often struggles with identity preservation during image translation. This repository solves this by pairing Anatomy Encoder with [Scalable Interpolation Transformer (SiT)](https://github.com/willisma/sit). 
+Generative modeling in medical imaging often struggles with identity preservation during image translation. This repository solves this by pairing a custom **Anatomy Encoder** with a [Scalable Interpolation Transformer (SiT)](https://github.com/willisma/sit).
 
 The model provides:
 * Continuous severity dials: Interpolate disease severity smoothly from 0.0 (Healthy) to 1.0 (Severe Pathology).

@@ -41,7 +41,7 @@ A Diffusion Transformer [(SiT-XL/2)](https://github.com/willisma/sit) was first 
 ## Installation
 
 ```bash
-git clone [https://github.com/Vadim-ATL/Counterfactual-CXR-Generation.git](https://github.com/Vadim-ATL/Counterfactual-CXR-Generation.git)
+git clone https://github.com/Vadim-ATL/Counterfactual-CXR-Generation.git
 cd Counterfactual-CXR-Generation
 
 # Create and activate environment
